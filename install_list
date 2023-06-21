@@ -15,3 +15,5 @@ npm i typescript-transform-paths
 //auth-feature
 npm i cloudinary
 npm i joi
+npm i bcryptjs
+npm i -D @types/bcryptjs
