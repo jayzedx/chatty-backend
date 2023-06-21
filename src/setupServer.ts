@@ -5,7 +5,8 @@ import { Application, json, urlencoded, Response, Request, NextFunction } from '
 //npm i --save-dev tsconfig-paths
 //npm i '@socket.io/redis-adapter' redis socket.io
 //sudo service redis-server start
-//npm i ttypescript typescript-transform-paths
+//npm i bunyan
+//npm i typescript-transform-paths
 
 import http from 'http';
 import cors from 'cors';
