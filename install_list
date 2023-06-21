@@ -1,0 +1,16 @@
+npm i --save-dev @types/express
+npm i cors helmet hpp cookie-session compression express-async-errors http-status-codes
+npm i ts-node -D
+npm i mongoose
+//dont forget to create project on website, database on compass and start service on windows
+npm i --save-dev tsconfig-paths
+npm i '@socket.io/redis-adapter' redis socket.io
+sudo service redis-server start
+npm i dotenv
+npm i --save-dev @types/bunyan
+npm i bunyan
+npm i typescript-transform-paths
+
+
+//auth-feature
+npm i cloudinary

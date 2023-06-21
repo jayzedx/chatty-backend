@@ -1,12 +1,4 @@
 import { Application, json, urlencoded, Response, Request, NextFunction } from 'express';
-//npm i --save-dev @types/express
-//npm i cors helmet hpp cookie-session compression express-async-errors http-status-codes
-//npm i ts-node -D
-//npm i --save-dev tsconfig-paths
-//npm i '@socket.io/redis-adapter' redis socket.io
-//sudo service redis-server start
-//npm i bunyan
-//npm i typescript-transform-paths
 
 import http from 'http';
 import cors from 'cors';

@@ -1,8 +1,6 @@
-//npm i dotenv
-//npm i --save-dev @types/bunyan
-//npx i bunyan
 import dotenv from 'dotenv';
 import bunyan from 'bunyan';
+import cloudinary from 'cloudinary';
 
 dotenv.config({});
 
@@ -15,6 +13,9 @@ class Config {
   public CLIENT_URL: string | undefined;
   public CLIENT_PORT: string | undefined;
   public REDIS_HOST: string | undefined;
+  public CLOUD_NAME: string | undefined;
+  public CLOUD_API_KEY: string | undefined;
+  public CLOUD_API_SECRET_KEY: string | undefined;
 
   private readonly DEFAULT_DATABASE_URL = 'mongodb://localhost:27017/chatdb';
   private readonly DEFAULT_REDIS_HOST = 'redis://localhost:6379';
@@ -28,6 +29,9 @@ class Config {
     this.CLIENT_URL = process.env.CLIENT_URL || '';
     this.CLIENT_PORT = process.env.CLIENT_PORT || '3000';
     this.REDIS_HOST = process.env.REDIS_HOST || this.DEFAULT_REDIS_HOST;
+    this.CLOUD_NAME = process.env.CLOUD_NAME || '';
+    this.CLOUD_API_KEY = process.env.CLOUD_API_KEY || '';
+    this.CLOUD_API_SECRET_KEY = process.env.CLOUD_API_SECRET_KEY || '';
   }
 
   public createLogger(name: string): bunyan {
@@ -40,6 +44,14 @@ class Config {
         throw new Error(`Configuration ${key} is undefined`);
       }
     }
+  }
+
+  public cloudinaryConfig(): void {
+    cloudinary.v2.config({
+      cloud_name: this.CLOUD_NAME,
+      api_key: this.CLOUD_API_KEY,
+      api_secret: this.CLOUD_API_SECRET_KEY
+    });
   }
 }
 
