@@ -14,3 +14,4 @@ npm i typescript-transform-paths
 
 //auth-feature
 npm i cloudinary
+npm i joi
