@@ -1,7 +1,7 @@
 //npm i mongoose
 //dont forget to create project on website, database on compass and start service on windows
 import mongoose from 'mongoose';
-import { config } from './config';
+import { config } from '@root/config';
 import Logger from 'bunyan';
 
 const log: Logger = config.createLogger('setupDatabase');

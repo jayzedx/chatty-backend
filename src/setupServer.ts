@@ -5,6 +5,7 @@ import { Application, json, urlencoded, Response, Request, NextFunction } from '
 //npm i --save-dev tsconfig-paths
 //npm i '@socket.io/redis-adapter' redis socket.io
 //sudo service redis-server start
+//npm i ttypescript typescript-transform-paths
 
 import http from 'http';
 import cors from 'cors';
@@ -14,12 +15,12 @@ import compression from 'compression';
 import cookieSession from 'cookie-session';
 import HTTP_STATUS from 'http-status-codes';
 import 'express-async-errors';
-import { config } from './config';
+import { config } from '@root/config';
 import { Server } from 'socket.io';
 import { createClient } from 'redis';
 import { createAdapter } from '@socket.io/redis-adapter';
-import applicationRoutes from './routes';
-import { CustomError, IErrorResponse } from './features/shared/globals/helpers/error-handlers';
+import applicationRoutes from '@root/routes';
+import { CustomError, IErrorResponse } from '@global/helpers/error-handlers';
 import Logger from 'bunyan';
 
 const SERVER_PORT = Number(config.CLIENT_PORT);
@@ -119,5 +120,7 @@ export class ChattyServer {
     });
   }
 
-  private socketIOConnections(io: Server): void {}
+  private socketIOConnections(io: Server): void {
+    log.info('socketIOConnections');
+  }
 }
