@@ -17,3 +17,5 @@ npm i cloudinary
 npm i joi
 npm i bcryptjs
 npm i -D @types/bcryptjs
+npm i jsonwebtoken lodash
+npm i --save-dev @types/jsonwebtoken @types/lodash
